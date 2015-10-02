@@ -1,0 +1,349 @@
+1.   Kirchhoff s current law states that 
+(a) net current flow at the junction is positive
+(b) Hebraic sum of the currents meeting at the junction is zero
+(c) no current can leave the junction without some current entering it.
+(d) total sum of currents meeting at the junction is zero
+Ans: b
+
+2. According to Kirchhoffs voltage law, the algebraic sum of all IR drops and e.m.fs. in any closed loop of a network is always
+(a) negative 
+(b) positive
+(c) determined by battery e.m.fs.
+(d) zero
+Ans: d
+
+3. Kirchhoffs current law is applicable to only
+(a) junction in a network
+(b) closed loops in a network
+(c) electric circuits
+(d) electronic circuits
+Ans: a
+
+4. Kirchhoffs voltage law is related to
+(a) junction currents
+(b) battery e.m.fs.  
+(c) IR drops
+(d) both (b) and (c)
+Ans: d
+
+5. Superposition theorem can be applied only to circuits having
+(a) resistive elements
+(b) passive elements
+(c) non-linear elements
+(d) linear bilateral elements
+Ans: d
+
+6. The concept on which Superposition theorem is based is
+(a) reciprocity
+(b) duality
+(c) non-linearity
+(d) linearity
+Ans: d
+
+7. Thevenin resistance Rth is found
+(a) by removing voltage sources along with their internal resistances
+(b) by short-circuiting the given two terminals
+(c) between any two \'open\' terminals
+(d) between same open terminals as for Etk
+Ans: d
+
+8. An ideal voltage source should have
+(a) large value of e.m.f.
+(b) small value of e.m.f.
+(c) zero source resistance
+(d) infinite source resistance
+Ans: c
+
+9. For a voltage source
+(a) terminal voltage is always lower than source e.m.f.
+(b) terminal voltage cannot be higher than source e.m.f.
+(c) the source e.m.f. and terminal voltage are equal
+(d) none of the above
+Ans: b
+
+10. To determine the polarity of the voltage drop across a resistor, it is necessary to know
+(a) value of current through the resistor
+(b) direction of current through the resistor
+(c) value of resistor
+(d) e.m.fs. in the circuit
+Ans: b
+
+11. "Maximum power output is obtained from a network when the load resistance is equal to the output resistance of the network as seen from the terminals of the load". The above statement is associated with
+(a) Millman\'s theorem
+(b) Thevenin's theorem
+(c) Superposition theorem
+(d) Maximum power transfer theorem
+Ans: d
+
+12. "Any number of current sources in parallel may be replaced by a single current source whose current is the algebraic sum of individual source currents and source resistance is the parallel combination of individual source resistances". The above statement is associated with
+(a) Thevenin\'s theorem
+(b) Millman\'s theorem
+(c) Maximum power transfer theorem
+(d) None of the above
+Ans: b
+
+13. "In any linear bilateral network, if a source of e.m.f. E in any branch produces a current I in any other branch, then same e.m.f. acting in the second branch would produce the same current / in the first branch". The above statement is associated with
+(a) compensation theorem
+(b) superposition theorem
+(c) reciprocity theorem
+(d) none of the above
+Ans: c
+
+14. Which of the following is non-linear circuit parameter ?
+(a) Inductance   
+(b) Condenser
+(c) Wire wound resistor
+(d) Transistor
+Ans: a
+
+15. A capacitor is generally a
+(a) bilateral and active component
+(b) active, passive, linear and nonlinear component
+(c) linear and bilateral component
+(d) non-linear and active component
+Ans: c
+
+16. "In any network containing more than one sources of e.m.f. the current in any branch is the algebraic sum of a number of individual fictitious currents (the number being equal to the number of sources of e.m.f.), each of which is due to separate action of each source of e.m.f., taken in order, when the remaining sources of e.m.f. are replaced by conductors, the resistances of which are equal to the internal resistances of the respective sources". The above statement is associated with
+(a) Thevenin\'s theorem
+(b) Norton\'s theorem
+(c) Superposition theorem
+(d) None of the above
+Ans: c
+
+17. Kirchhoff s law is applicable to
+(a) passive networks only
+(b) a.c. circuits only
+(c) d.c. circuits only
+(d) both a.c. as well d.c. circuits
+Ans: d
+
+18. Kirchhoff s law is not applicable to circuits with
+(a) lumped parameters
+(b) passive elements
+(c) distributed parameters
+(d) non-linear resistances
+Ans: c
+
+19. Kirchhoff s voltage law applies to circuits with
+(a) nonlinear elements only
+(b) linear elements only
+(c) linear, non-linear, active and passive elements
+(d) linear, non-linear, active, passive, time varying as wells as time-in-variant elements
+Ans: d
+
+20. The resistance LM will be
+(a) 6.66 Q 
+(b) 12 Q
+(c) 18Q 
+(d) 20Q
+Ans: a
+
+21. For high efficiency of transfer of power, internal resistance of the source should be
+(a) equal to the load resistance
+(b) less than the load resistance
+(c) more than the load resistance
+(d) none of the above
+Ans: b
+
+22. Efficiency of power transfer when maximum transfer of power c xerosis
+(a) 100% 
+(b) 80%
+(c) 75% 
+(d) 50%
+Ans: d
+
+23. If resistance across LM in Fig. 2.30 is 15 ohms, the value of R is
+(a) 10 Q 
+(b) 20 Q 
+(c) 30 Q 
+(d) 40 Q
+Ans: c
+
+24. For maximum transfer of power, internal resistance of the source should be
+(a) equal to load resistance
+(b) less than the load resistance
+(c) greater than the load resistance
+(d) none of the above
+Ans: a
+
+25. If the energy is supplied from a source, whose resistance is 1 ohm, to a load of 100 ohms the source will be
+(a) a voltage source
+(b) a current source
+(c) both of above
+(d) none of the above
+Ans: a
+
+26. The circuit whose properties are same in either direction is known as
+(a) unilateral circuit
+(b) bilateral circuit
+(c) irreversible circuit
+(d) reversible circuit
+Ans: b
+
+27. In a series parallel circuit, any two resistances in the same current path must be in
+(a) series with each other
+(b) parallel with each other
+(c) series with the voltage source.\'
+(d) parallel with the voltage source
+Ans: a
+
+28. The circuit has resistors, capacitors and semi-conductor diodes. The circuit will be known as
+(a) non-linear circuit
+(b) linear circuit
+(c) bilateral circuit
+(d) none of the above
+Ans: a
+
+29. A non-linear network does not satisfy
+(a) superposition condition
+(b) homogeneity condition
+(c) both homogeneity as well as superposition condition
+(d) homogeneity, superposition and associative condition
+Ans: c
+
+30. An ideal voltage source has
+(a) zero internal resistance
+(b) open circuit voltage equal to the voltage on full load
+(c) terminal voltage in proportion to current
+(d) terminal voltage in proportion to load
+Ans: a
+
+31. A network which contains one or more than one source of e.m.f. is known as
+(a) linear network
+(b) non-linear network
+(c) passive network
+(d) active network
+Ans: c
+
+32. The superposition theorem is applicable to
+(a) linear, non-linear and time variant responses
+(b) linear and non-linear resistors only
+(c) linear responses only
+(d) none of the above
+Ans: c
+
+33. Which of the following is not a nonlinear element ?
+(a) Gas diode 
+(b) Heater coil
+(c) Tunnel diode 
+(d) Electric arc
+Ans: b
+
+34. Application of Norton\'s theorem to a circuit yields
+(a) equivalent current source and impedance in series
+(b) equivalent current source and impedance in parallel
+(c) equivalent impedance
+(d) equivalent current source
+Ans: a
+
+35. Millman\'s theorem yields
+(a) equivalent resistance
+(b) equivalent impedance
+(c) equivalent voltage source
+(d) equivalent voltage or current source
+Ans: d
+
+36. The superposition theorem is applicable to
+(a) voltage only 
+(b) current "only
+(c) both current and voltage
+(d) current voltage and power
+Ans: d
+
+37. Between the branch voltages of a loop the Kirchhoff s voltage law imposes
+(a) non-linear constraints
+(b) linear constraints
+(c) no constraints
+(d) none of the above
+Ans: b
+
+38. A passive network is one which contains
+(a) only variable resistances
+(b) only some sources of e.m.f. in it
+(c) only two sources of e.m.f. in it
+(d) no source of e.m.f. in it
+Ans: d
+
+39. A terminal where three on more branches meet is known as
+(a) node 
+(b) terminus
+(c) combination  
+(d) anode
+Ans: a
+
+40. Which of the following is the passive element ?
+(a) Capacitance
+(b) Ideal current source
+(c) Ideal voltage source
+(d) All of the above
+Ans: a
+
+41. Which of the following is a bilateral element ?
+(a) Constant current source
+(b) Constant voltage source
+(c) Capacitance
+(d) None of the above
+Ans: c
+
+42. A closed path made by several branches of the network is known as
+(a) branch 
+(b) loop
+(c) circuit 
+(d) junction
+Ans: b
+
+43. A linear resistor having 0 &lt; R &lt; &#176;o is a
+(a) current controlled resistor
+(b) voltage controlled resistor
+(c) both current controlled and voltage controlled resistor
+(d) none of the above
+Ans: c
+
+44. A star circuit has element of resistance R/2. The equivalent delta elements will be
+(a) R/6 
+(b) fi?
+(c) 2R 
+(d) 4R
+Ans: b
+
+45. A delta circuit has each element of value R/2. The equivalent elements of star circuit with be
+(a) RIG 
+(b) R/3
+(c) 2R 
+(d) 3R
+Ans: a
+
+46. In Thevenin\'s theorem, to find Z
+(a) all independent current sources are short circuited and independent voltage sources are open circuited
+(b) all independent voltage sources are open circuited and all independent current sources are short circuited
+(c) all independent voltage and current sources are short circuited
+(d) all independent voltage sources are short circuited and all independent current sources are open circuited
+Ans: d
+
+47. While calculating Rth in Thevenin\'s theorem and Norton equivalent
+(a) all independent sources are made dead
+(b) only current sources are made dead
+(c) only voltage sources are made dead
+(d) all voltage and current sources are made dead
+Ans: a
+
+48.   The number of independent equations to solve a network is equal to
+(a) the number of chords
+(b) the number of branches
+(c) sum of the number of branches and chords
+(d) sum of number of branches, chords and nodes
+Ans: a
+
+49. The superposition theorem requires as many circuits to be solved as there are
+(a) sources, nodes and meshes
+(b) sources and nodes
+(c) sources 
+(d) nodes
+Ans: c
+
+50. Choose the incorrect statement.
+(a) A branch formed by the parallel connection of any resistor R and open circuit has the characteristic of an open circuit.
+(b) A branch formed by the parallel connection of any resistor R and a short circuit has the characteristic of a short circuit.
+(c) A branch formed by the series connection of any resistor R and an open circuit has the characteristic of an open circuit.
+(d) A branch formed by the series connection of any resistor R and a short circuit has the characteristic of resistor R.
+Ans: a
