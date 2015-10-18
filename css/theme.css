@@ -1,0 +1,130 @@
+@import url(http://fonts.googleapis.com/css?family=Varela+Round);
+@import url(http://necolas.github.io/normalize.css/3.0.2/normalize.css);
+
+body {
+	background: #ECEEEF;
+	margin: 100px auto;
+	max-width: 462px;
+	font: 18px normal 'Varela Round', Helvetica, serif;
+	color: #777B7E;
+}
+
+#container {
+	// border: 1px solid;
+	width: 650px;
+	height:670px;
+}
+
+.input-group {
+	// border: 1px solid;
+	width: 325px;
+	float: right;
+}
+
+.question-wrapper {
+	background: #fff;
+	border-radius: 10px;
+	border: 5px solid #D5DDE4;
+	padding: 40px 40px;
+	margin: 10px 0px;
+	width: 650px;
+	height: 600px;
+	float:left;
+}
+
+.question-wrapper p {
+	// border: 1px solid #D5DDE4;
+}
+
+ol.answer-list {
+	list-style-type: upper-alpha;
+	padding: 0;
+	margin: 40px 0 0;
+}
+
+ol.answer-list li {
+	// display: inline-block;
+	width: 100%;
+	padding: 22px 0;
+	margin: 0;
+	// border: 1px solid #D5DDE4;
+}		
+
+ol.answer-list li:hover {
+	background: #D5DDE4 !important;
+}
+
+.button-clear-session {
+	background-color:#e4685d;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:12px;
+	padding:5px 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+	margin-top: 5px;
+}
+.button-clear-session:hover {
+	background-color:#eb675e;
+}
+.button-clear-session:active {
+	position:relative;
+	top:1px;
+}
+
+.button-submit {
+	background-color:#44c767;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.button-submit:hover {
+	background-color:#5cbf2a;
+}
+.button-submit:active {
+	position:relative;
+	top:1px;
+}
+
+.button-cancel {
+	background-color:#e4685d;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+}
+.button-cancel:hover {
+	background-color:#eb675e;
+}
+.button-cancel:active {
+	position:relative;
+	top:1px;
+}
+
+#process-container {
+	width: 650px;
+	float: right
+}

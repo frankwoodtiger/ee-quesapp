@@ -4,137 +4,10 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<style type="text/css" media="screen">
-        @import url(http://fonts.googleapis.com/css?family=Varela+Round);
-        @import url(http://necolas.github.io/normalize.css/3.0.2/normalize.css);
-		
-		body {
-            background: #ECEEEF;
-            margin: 100px auto;
-            max-width: 462px;
-            font: 18px normal 'Varela Round', Helvetica, serif;
-            color: #777B7E;
-        }
-		
-		#container {
-			// border: 1px solid;
-			width: 650px;
-			height:670px;
-		}
-		
-		.input-group {
-			// border: 1px solid;
-			width: 325px;
-			float: right;
-		}
-		
-		.question-wrapper {
-			background: #fff;
-            border-radius: 10px;
-            border: 5px solid #D5DDE4;
-            padding: 40px 40px;
-            margin: 10px 0px;
-			width: 650px;
-			height: 600px;
-			float:left;
-		}
-		
-		.question-wrapper p {
-			// border: 1px solid #D5DDE4;
-		}
-		
-		ol.answer-list {
-			list-style-type: upper-alpha;
-			padding: 0;
-            margin: 40px 0 0;
-		}
-
-        ol.answer-list li {
-			// display: inline-block;
-            width: 100%;
-            padding: 22px 0;
-            margin: 0;
-            // border: 1px solid #D5DDE4;
-        }		
-		
-		ol.answer-list li:hover {
-			background: #D5DDE4 !important;
-		}
-		
-		.button-clear-session {
-			background-color:#e4685d;
-			-moz-border-radius:5px;
-			-webkit-border-radius:5px;
-			border-radius:5px;
-			border:1px solid #18ab29;
-			display:inline-block;
-			cursor:pointer;
-			color:#ffffff;
-			font-family:arial;
-			font-size:12px;
-			padding:5px 10px;
-			text-decoration:none;
-			text-shadow:0px 1px 0px #2f6627;
-			margin-top: 5px;
-		}
-		.button-clear-session:hover {
-			background-color:#eb675e;
-		}
-		.button-clear-session:active {
-			position:relative;
-			top:1px;
-		}
-		
-		.button-submit {
-			background-color:#44c767;
-			-moz-border-radius:5px;
-			-webkit-border-radius:5px;
-			border-radius:5px;
-			border:1px solid #18ab29;
-			display:inline-block;
-			cursor:pointer;
-			color:#ffffff;
-			font-family:arial;
-			font-size:17px;
-			padding:16px 31px;
-			text-decoration:none;
-			text-shadow:0px 1px 0px #2f6627;
-		}
-		.button-submit:hover {
-			background-color:#5cbf2a;
-		}
-		.button-submit:active {
-			position:relative;
-			top:1px;
-		}
-		
-		.button-cancel {
-			background-color:#e4685d;
-			-moz-border-radius:5px;
-			-webkit-border-radius:5px;
-			border-radius:5px;
-			border:1px solid #ffffff;
-			display:inline-block;
-			cursor:pointer;
-			color:#ffffff;
-			font-family:arial;
-			font-size:17px;
-			padding:16px 31px;
-			text-decoration:none;
-			text-shadow:0px 1px 0px #b23e35;
-		}
-		.button-cancel:hover {
-			background-color:#eb675e;
-		}
-		.button-cancel:active {
-			position:relative;
-			top:1px;
-		}
-		
-		#process-container {
-			width: 650px;
-			float: right
-		}
+		<script src="js/submit-cancel-logic.js"></script>
+		<script src="js/search-logic.js"></script>
+		<script src="js/clear-session-logic.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/theme.css">
 	</style>
 	</head>
 	<?php 
@@ -167,11 +40,13 @@
 		// this does not work because $ques_progress_array is another reference
 		// $ques_id = array_splice($ques_progress_array, $random_index, 1)[0];
 		
+		// $_SESSION['ques_progress_array'] keeps track of the questions that were not picked
+		// We then pick up an random element, and remove it from the progress array
+		// array_splice remove the element and returns the array consisting of the extracted elements
 		$ques_id = array_splice($_SESSION['ques_progress_array'], $random_index, 1)[0];
 		$process_bar_percentage = (50 - $ques_left_count) * 2;
 		$ques_left_count--;
 		$_SESSION['ques_left_count'] = $ques_left_count;
-		
 		
 		$dao = new DAO;
 		$qap = $dao->getQuesAnsPairByQuesId($ques_id);
@@ -190,7 +65,6 @@
 	<body>
 		<div id="container">
 			<a class="button-clear-session" type="button">Clear Session</a>
-			
 			<div class="input-group">
 				<input type="text" class="form-control" placeholder="Search...">
 				<span class="input-group-btn">
@@ -218,82 +92,16 @@
 			</div>
 			<p>Session id: <?= $sessionId ?></p>
 		</div>
+		<!-- using the HTML element dataset property to pass PHP variable to JavaScript -->
+		<div id="ques-id-container" data-ques-id="<?= $ques_id ?>">
 	</body>
 	<script>
 	$(function() {
 		// The DOM is ready!
 		<?php if ($isAnsAll == true) { ?>
 			$(".question-wrapper").html("<p>Congrats, you have answered all the questions! Please click clear session to restart!</p>");
-		<?php } else { ?>
-			var selectedChoice = "";
-			$("ol.answer-list li").on("click", buttonHandler);	
-			
-			$(document).on("click", ".button-submit",function() { 
-				// alert(selectedChoice);
-				$.ajax({
-					url: 'ajaxCheckAns.php', // this is the PHP module that deals with checking answer by question id.
-					type: 'post',
-					data: {"ques_id":<?= $ques_id  ?>, "ans": selectedChoice},
-					success: function(data, status) {
-						console.log("$ques_id:" + "<?= $ques_id  ?>" + ", " + data);
-						data = JSON.parse(data); // parse JSON string into JSON object
-						if(data["correctness"] == "correct") {
-							$(".question-wrapper").append("<br><p id=\"msg\">Correct!</p>");	
-						}
-						else if (data["correctness"] == "incorrect") {
-							$(".question-wrapper").append("<br><p id=\"msg\">Incorrect! Correct answer is " + data["ans"] + ".</p>");	
-						}
-						
-						$(".question-wrapper").fadeOut(3000, function() {
-							 window.location.reload();
-						});
-					},
-					error: function(xhr, desc, err) {
-						console.log(xhr);
-						console.log("Details: " + desc + "\nError:" + err);
-					}
-				});
-			});
-			
-			// need to use $(document), otherwise wont work for dynamically created elements
-			$(document).on("click", ".button-cancel", function() { 
-				$(".button-submit, .button-cancel, #msg").fadeOut(500, function() {
-					$("#buttons-msg-block").remove();
-				});
-				$("ol.answer-list li").css("background", "#fff");			
-				$("ol.answer-list li").on("click", buttonHandler);
-			});
-			
-			$(document).on("click", "#search-button", function() { 
-				alert("search clicked");
-			});
-			
-			function buttonHandler(e){
-				$(e.target).css("background", "#BFDFFF"); // Highlight this choice
-				selectedChoice = e.target.id; // This saved the choice (the id name) user made
-				
-				$("ol.answer-list li").off("click"); // Disable click for all choices			
-				var submitbutton = "<a class=\"button-submit\" type=\"button\">Submit</a>"
-				var cancelbutton = "<a class=\"button-cancel\" type=\"button\">Cancel</a>"
-				// need div block to wrap around all things in order to remove them all, otherwise <br> and &nbsp will still be there
-				$(".question-wrapper").append("<div id=\"buttons-msg-block\"><br>" + submitbutton + "&nbsp" + cancelbutton + "</div>");		
-			}
 		<?php } ?>
-		
-		$(document).on("click", ".button-clear-session", function() { 
-			$.ajax({
-				url: 'clearSession.php', // this is the PHP module that deals with checking answer by question id.
-				type: 'post',
-				success: function(data, status) {
-					window.location.reload();
-				},
-				error: function(xhr, desc, err) {
-					console.log(xhr);
-					console.log("Details: " + desc + "\nError:" + err);
-				}
-			});
-		});
 	});
 	</script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	
 </html>
